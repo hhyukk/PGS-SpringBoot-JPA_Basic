@@ -17,4 +17,5 @@ public class Post {
     @GeneratedValue(strategy = IDENTITY) // AUTO_INCREMENT
     private int id; // INT
     private String title; // VARCHAR(255)
+    private String content;
 }
