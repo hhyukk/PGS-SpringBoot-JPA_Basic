@@ -13,14 +13,21 @@ public class BaseInitData {
     private PostRepository postRepository;
 
     @Bean
-    ApplicationRunner baseInitDataApplicationRunner(){
-        return args ->{
-            System.out.println("기본 데이터가 초기화되었습니다.");
+    ApplicationRunner baseInitDataApplicationRunner() {
+        return args -> {
+            if (postRepository.count() > 0) return;
 
             Post post = new Post();
             post.setTitle("제목 1");
 
             postRepository.save(post); // SELECT COUNT(*) FROM post;
+
+            Post post2 = new Post();
+            post2.setTitle("제목 2");
+
+            postRepository.save(post2);
+
+            System.out.println("기본 데이터가 초기화되었습니다.");
         };
     }
 }
