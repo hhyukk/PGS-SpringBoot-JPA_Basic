@@ -9,17 +9,21 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = IDENTITY) // AUTO_INCREMENT
-    private int id; // INT
+    private final int id; // INT
     private String title; // VARCHAR(255)
     @Column(columnDefinition = "TEXT")
     private String content;
 
     public Post(String title, String content) {
+        this.id = 0;
         this.title = "";
         this.content = "";
+    }
+
+    public Post() {
+        this("", "");
     }
 }
