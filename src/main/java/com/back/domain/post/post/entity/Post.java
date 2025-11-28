@@ -1,9 +1,6 @@
 package com.back.domain.post.post.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +14,6 @@ public class Post {
     @GeneratedValue(strategy = IDENTITY) // AUTO_INCREMENT
     private int id; // INT
     private String title; // VARCHAR(255)
+    @Column(columnDefinition = "TEXT")
     private String content;
 }
