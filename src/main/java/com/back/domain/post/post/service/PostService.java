@@ -34,4 +34,11 @@ public class PostService {
 
         postRepository.save(post);
     }
+
+    public Post write(String title, String content) {
+        Post post = new Post(title, content);
+        postRepository.save(post);
+
+        return post;
+    }
 }
