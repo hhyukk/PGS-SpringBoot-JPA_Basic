@@ -14,7 +14,6 @@ import java.util.Optional;
 public class BaseInitData {
     private PostService postService;
 
-    @Autowired
     public BaseInitData(PostService postService) {
         this.postService = postService;
     }
