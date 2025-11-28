@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -11,6 +12,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@ToString
 public class Post {
     @Id
     @GeneratedValue(strategy = IDENTITY) // AUTO_INCREMENT
@@ -18,4 +20,9 @@ public class Post {
     private final String title; // VARCHAR(255)
     @Column(columnDefinition = "TEXT")
     private final String content;
+
+    public Post() {
+        this.title = "";
+        this.content = "";
+    }
 }

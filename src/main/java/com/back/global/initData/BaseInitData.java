@@ -34,5 +34,8 @@ public class BaseInitData {
 
     void work2() {
         Optional<Post> opPost1 = postRepository.findById(1); // SELECT * FROM post WHERE id = 1;
+        Post post = opPost1.get();
+
+        System.out.println("post1: " + opPost1);
     }
 }
